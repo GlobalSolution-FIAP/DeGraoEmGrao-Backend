@@ -26,6 +26,8 @@ public class Ong {
 
   private String email;
 
+  private String senha;
+
   private String responsavel;
 
   private String telResponsavel;

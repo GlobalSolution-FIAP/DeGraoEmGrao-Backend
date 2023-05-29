@@ -17,7 +17,7 @@ public class Fornecedor {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
- 
+
   private String nome;
 
   private String cnpj;
@@ -25,6 +25,8 @@ public class Fornecedor {
   private String telefone;
 
   private String email;
+
+  private String senha;
 
   private String responsavel;
 
