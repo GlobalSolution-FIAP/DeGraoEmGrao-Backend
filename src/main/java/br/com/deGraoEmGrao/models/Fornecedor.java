@@ -22,6 +22,8 @@ public class Fornecedor {
 
   private String cnpj;
 
+  private int ddd;
+
   private String telefone;
 
   private String email;
@@ -29,8 +31,6 @@ public class Fornecedor {
   private String senha;
 
   private String responsavel;
-
-  private int ddd;
 
   private String telResponsavel;
 
