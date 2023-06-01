@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,7 +39,6 @@ public class OngController {
     log.info("Cadastrando a ong " + ong);
     repository.save(ong);
     return ResponseEntity.status(HttpStatus.CREATED).body(ong);
-
   }
 
   @GetMapping("{id}")
@@ -54,9 +54,17 @@ public class OngController {
     return ResponseEntity.noContent().build();
   }
 
+  @PutMapping("{id}")
+  public ResponseEntity<Ong> update(@PathVariable Integer id, @RequestBody Ong ong){
+    log.info("Atualizando a ong com o id " + id );
+    getOng(id);
+    ong.setId(id);
+    repository.save(ong);
+    return ResponseEntity.ok(ong);
+  }
+
   private Ong getOng(Integer id){
     return repository.findById(id)
     .orElseThrow(() -> new RestNotFoundException("Ong não cadastrado"));
-
   }
 }
