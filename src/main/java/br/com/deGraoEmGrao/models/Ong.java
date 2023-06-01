@@ -20,6 +20,8 @@ public class Ong {
 
   private String nome;
 
+  private String cnpj;
+
   private int ddd;
 
   private String telefone;
