@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.deGraoEmGrao.exception.RestNotFoundException;
 import br.com.deGraoEmGrao.models.Fornecedor;
 import br.com.deGraoEmGrao.repository.FornecedorRepository;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/degraoemgrao/fornecedores")
@@ -35,7 +36,7 @@ Logger log = LoggerFactory.getLogger(getClass());
   }
 
   @PostMapping
-  public ResponseEntity<Fornecedor> create(@RequestBody Fornecedor fornecedor){
+  public ResponseEntity<Fornecedor> create(@RequestBody @Valid Fornecedor fornecedor){
     log.info("Cadastrando fornecedor" + fornecedor);
     repository.save(fornecedor);
     return ResponseEntity.status(HttpStatus.CREATED).body(fornecedor);
@@ -55,7 +56,7 @@ Logger log = LoggerFactory.getLogger(getClass());
   }
 
   @PutMapping("{id}")
-  public ResponseEntity<Fornecedor> update(@PathVariable Integer id, @RequestBody Fornecedor fornecedor){
+  public ResponseEntity<Fornecedor> update(@PathVariable Integer id, @RequestBody @Valid Fornecedor fornecedor){
     log.info("Atualizando o fornecedor com o id" + id);
     getFornecedor(id);
     fornecedor.setId(id);
