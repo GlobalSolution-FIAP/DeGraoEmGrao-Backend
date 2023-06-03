@@ -5,7 +5,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -16,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Fornecedor {
+public class DoadorPF {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,13 +26,11 @@ public class Fornecedor {
   private String nome;
 
   @NotBlank
-  @Size(min = 14, max = 14)
-  private String cnpj;
-
-  private int ddd;
+  @Size(min = 11, max = 11)
+  private String cpf;
 
   @NotBlank
-  @Size(min = 8 , max = 9)
+  @Size(min = 10 , max = 11)
   private String telefone;
 
   @NotBlank
@@ -43,11 +40,4 @@ public class Fornecedor {
 
   @NotBlank
   private String senha;
-
-  @NotBlank
-  private String responsavel;
-
-  @NotBlank
-  private String telResponsavel;
-
 }

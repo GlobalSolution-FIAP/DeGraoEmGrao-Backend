@@ -14,49 +14,48 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.deGraoEmGrao.exception.RestNotFoundException;
-import br.com.deGraoEmGrao.models.Alimento;
-import br.com.deGraoEmGrao.repository.AlimentoRepository;
+import br.com.deGraoEmGrao.models.Doacao;
+import br.com.deGraoEmGrao.repository.DoacaoRepository;
 
 @RestController
-@RequestMapping("/degraoemgrao/alimentos")
-public class AlimentoController {
+@RequestMapping("/degraoemgrao/doacao")
+public class DoacaoController {
 
   Logger log = LoggerFactory.getLogger(getClass());
 
   @Autowired
-  AlimentoRepository repository;
+  DoacaoRepository repository;
 
   @GetMapping
-  private List<Alimento> getALl(){
+  private List<Doacao> getALl(){
     return repository.findAll();
   }
 
   @PostMapping
-  public ResponseEntity<Alimento> create(@RequestBody Alimento alimento){
+  public ResponseEntity<Doacao> create(@RequestBody Doacao alimento){
     log.info("Cadastrando o alimento " + alimento);
     repository.save(alimento);
     return ResponseEntity.status(HttpStatus.CREATED).body(alimento);
   }
 
   @GetMapping("{id}")
-  public ResponseEntity<Alimento> show(@PathVariable Integer id){
+  public ResponseEntity<Doacao> show(@PathVariable Integer id){
     log.info("Buscando o alimento com o id " + id);
     return ResponseEntity.ok(getAlimento(id));
   }
 
   @DeleteMapping("{id}")
-  public ResponseEntity<Alimento> delete(@PathVariable Integer id){
+  public ResponseEntity<Doacao> delete(@PathVariable Integer id){
     log.info("Deletando o alimento com o id " + id);
     repository.delete(getAlimento(id));
     return ResponseEntity.noContent().build();
   }
 
   @PutMapping("{id}")
-  public ResponseEntity<Alimento> update(@PathVariable Integer id, @RequestBody Alimento alimento){
+  public ResponseEntity<Doacao> update(@PathVariable Integer id, @RequestBody Doacao alimento){
     log.info("Alterando o alimento com o id" + id);
     getAlimento(id);
     alimento.setId(id);
@@ -64,7 +63,7 @@ public class AlimentoController {
     return ResponseEntity.ok(alimento);
   }
 
-  private Alimento getAlimento(Integer id){
+  private Doacao getAlimento(Integer id){
     return repository.findById(id)
     .orElseThrow(() -> new RestNotFoundException("Alimento não cadastrado"));
   }
