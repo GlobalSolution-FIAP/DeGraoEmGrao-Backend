@@ -1,9 +1,12 @@
 package br.com.deGraoEmGrao.models;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -11,10 +14,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
+@Table(name = "")
 public class DoadorPJ {
 
   @Id
@@ -35,16 +39,20 @@ public class DoadorPJ {
 
   @NotBlank
   @Size(min = 8, max = 50)
-  @Email(message = "Email não é válido", regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
+  @Email
   private String email;
 
   @NotBlank
   private String senha;
 
   @NotBlank
+  @Size(min = 3, max = 50)
   private String responsavel;
 
   @NotBlank
+  @Size(min = 10 , max =11)
   private String telResponsavel;
-
+  
+  @ManyToOne
+  private Endereco endereco;
 }
