@@ -13,9 +13,9 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Ong {
+@NoArgsConstructor
+public class Entregador {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,12 +26,8 @@ public class Ong {
   private String nome;
 
   @NotBlank
-  @Size(min = 14, max = 14)
-  private String cnpj;
-
-  @NotBlank
-  @Size(min = 10 , max =11)
-  private String telefone;
+  @Size(min = 11, max = 11)
+  private String cpf;
 
   @NotBlank
   @Size(min = 8, max = 50)
@@ -42,9 +38,7 @@ public class Ong {
   private String senha;
 
   @NotBlank
-  private String responsavel;
-
-  @NotBlank
-  private String telResponsavel;
+  @Size(min = 10 , max =11)
+  private String telefone;
 
 }

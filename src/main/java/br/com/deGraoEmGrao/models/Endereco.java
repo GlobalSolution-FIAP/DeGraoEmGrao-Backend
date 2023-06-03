@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -13,38 +13,41 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Ong {
+@NoArgsConstructor
+public class Endereco {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
 
   @NotBlank
-  @Size(min = 3, max = 50)
-  private String nome;
+  @Size(min = 3, max = 80)
+  private String logradouro;
 
   @NotBlank
-  @Size(min = 14, max = 14)
-  private String cnpj;
+  @Size(min = 1, max = 50)
+  private String numero;
+
+  private String complemento;
 
   @NotBlank
-  @Size(min = 10 , max =11)
-  private String telefone;
+  @Size(min = 2, max = 50)
+  private String bairro;
 
   @NotBlank
-  @Size(min = 8, max = 50)
-  @Email(message = "Email não é válido", regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
-  private String email;
+  @Size(min = 8, max = 8)
+  private String cep;
 
   @NotBlank
-  private String senha;
+  @Size(min = 2, max = 50)
+  private String cidade;
 
   @NotBlank
-  private String responsavel;
+  @Size(min = 2, max = 5)
+  private String estado;
 
   @NotBlank
-  private String telResponsavel;
-
+  @Size(min = 2, max = 30)
+  private String pais;
 }

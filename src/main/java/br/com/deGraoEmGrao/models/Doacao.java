@@ -12,16 +12,26 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Doacao {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
 
+  private String nome;
+
+  private Double quantidade;
+
+  private Calendar dataValidade;
+
+  private String Categoria;
+
+  private String condicao;
+
   private Calendar dataEntrega;
 
-  private String status;
+  private Boolean status;
 
 }
