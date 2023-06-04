@@ -5,5 +5,6 @@ public enum Categoria {
   FRUTAS,
   LEGUMES,
   VERGURAS,
+  DOCES,
   PERECIVEL
 }

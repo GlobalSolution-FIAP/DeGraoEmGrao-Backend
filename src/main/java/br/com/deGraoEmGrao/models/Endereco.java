@@ -53,4 +53,5 @@ public class Endereco {
   @Size(min = 2, max = 30)
   private String pais;
   
+  
 }

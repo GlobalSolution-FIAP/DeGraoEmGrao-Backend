@@ -4,6 +4,8 @@ import java.util.Calendar;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -17,12 +19,14 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "")
 public class Doacao {
@@ -45,10 +49,9 @@ public class Doacao {
   @Column(name = "")
   private Calendar dataValidade;
 
-  @NotBlank
-  @Size(min = 3, max = 50)
+  @Enumerated(EnumType.STRING)
   @Column(name = "")
-  private String Categoria;
+  private Categoria categoria;
 
   @NotBlank
   @Size(min = 3, max = 20)
