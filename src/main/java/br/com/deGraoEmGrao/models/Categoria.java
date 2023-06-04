@@ -1,10 +1,5 @@
 package br.com.deGraoEmGrao.models;
 
 public enum Categoria {
-  CARNES,
-  FRUTAS,
-  LEGUMES,
-  VERGURAS,
-  DOCES,
-  PERECIVEL
+	CARNES, FRUTAS, LEGUMES, VERGURAS, DOCES, PERECIVEL
 }

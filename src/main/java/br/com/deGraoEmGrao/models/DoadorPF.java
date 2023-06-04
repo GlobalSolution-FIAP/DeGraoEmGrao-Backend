@@ -22,39 +22,38 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "")
 public class DoadorPF {
-  
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "")
-  private Integer id;
 
-  @NotBlank
-  @Size(min = 3, max = 50)
-  @Column(name = "")
-  private String nome;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "")
+	private Integer id;
 
-  @NotBlank
-  @Size(min = 11, max = 11)
-  @Column(name = "")
-  private String cpf;
+	@NotBlank
+	@Size(min = 3, max = 50)
+	@Column(name = "")
+	private String nome;
 
-  @NotBlank
-  @Size(min = 10 , max = 11)
-  @Column(name = "")
-  private String telefone;
+	@NotBlank
+	@Size(min = 11, max = 11)
+	@Column(name = "")
+	private String cpf;
 
-  @NotBlank
-  @Size(min = 8, max = 50)
-  @Email
-  @Column(name = "")
-  private String email;
+	@NotBlank
+	@Size(min = 10, max = 11)
+	@Column(name = "")
+	private String telefone;
 
-  @NotBlank
-  @Column(name = "")
-  private String senha;
-  
-  @ManyToOne
-  private Endereco endereco;
- 
- 
+	@NotBlank
+	@Size(min = 8, max = 50)
+	@Email
+	@Column(name = "")
+	private String email;
+
+	@NotBlank
+	@Column(name = "")
+	private String senha;
+
+	@ManyToOne
+	private Endereco endereco;
+
 }

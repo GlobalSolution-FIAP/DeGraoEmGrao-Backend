@@ -23,46 +23,46 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "")
 public class Ong {
-  
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "")
-  private Integer id;
 
-  @NotBlank
-  @Size(min = 3, max = 50)
-  @Column(name = "")
-  private String nome;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "")
+	private Integer id;
 
-  @NotBlank
-  @Size(min = 14, max = 14)
-  @Column(name = "")
-  private String cnpj;
+	@NotBlank
+	@Size(min = 3, max = 50)
+	@Column(name = "")
+	private String nome;
 
-  @NotBlank
-  @Size(min = 10 , max =11)
-  @Column(name = "")
-  private String telefone;
+	@NotBlank
+	@Size(min = 14, max = 14)
+	@Column(name = "")
+	private String cnpj;
 
-  @NotBlank
-  @Size(min = 8, max = 50)
-  @Email
-  @Column(name = "")
-  private String email;
+	@NotBlank
+	@Size(min = 10, max = 11)
+	@Column(name = "")
+	private String telefone;
 
-  @NotBlank
-  @Column(name = "")
-  private String senha;
+	@NotBlank
+	@Size(min = 8, max = 50)
+	@Email
+	@Column(name = "")
+	private String email;
 
-  @NotBlank
-  @Column(name = "")
-  private String responsavel;
+	@NotBlank
+	@Column(name = "")
+	private String senha;
 
-  @NotBlank
-  @Column(name = "")
-  private String telResponsavel;
-  
-  @ManyToOne
-  private Endereco endereco;
-  
+	@NotBlank
+	@Column(name = "")
+	private String responsavel;
+
+	@NotBlank
+	@Column(name = "")
+	private String telResponsavel;
+
+	@ManyToOne
+	private Endereco endereco;
+
 }

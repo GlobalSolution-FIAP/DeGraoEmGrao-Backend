@@ -2,6 +2,9 @@ package br.com.deGraoEmGrao.models;
 
 import java.util.Calendar;
 
+import org.springframework.hateoas.EntityModel;
+
+import br.com.deGraoEmGrao.controllers.DoacaoController;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -31,49 +34,50 @@ import lombok.NoArgsConstructor;
 @Table(name = "")
 public class Doacao {
 
-  @Id
-  @Column(name = "")
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer id;
-  
-  @NotBlank
-  @Size(min = 3, max = 50)
-  @Column(name = "")
-  private String nome;
+	@Id
+	@Column(name = "")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 
-  @Positive
-  @Column(name = "")
-  private Double quantidade;
+	@NotBlank
+	@Size(min = 3, max = 50)
+	@Column(name = "")
+	private String nome;
 
-  @Temporal(TemporalType.DATE)
-  @Column(name = "")
-  private Calendar dataValidade;
+	@Positive
+	@Column(name = "")
+	private Double quantidade;
 
-  @Enumerated(EnumType.STRING)
-  @Column(name = "")
-  private Categoria categoria;
+	@Temporal(TemporalType.DATE)
+	@Column(name = "")
+	private Calendar dataValidade;
 
-  @NotBlank
-  @Size(min = 3, max = 20)
-  @Column(name = "")
-  private String condicao;
+	@Enumerated(EnumType.STRING)
+	@Column(name = "")
+	private Categoria categoria;
 
-  @Temporal(TemporalType.DATE)
-  @Column(name = "")
-  private Calendar dataEntrega;
+	@NotBlank
+	@Size(min = 3, max = 20)
+	@Column(name = "")
+	private String condicao;
 
-  @Column(name = "")
-  private Boolean status;
+	@Temporal(TemporalType.DATE)
+	@Column(name = "")
+	private Calendar dataEntrega;
 
-  @ManyToOne
-  private DoadorPF doadorPF;
-  
-  @ManyToOne
-  private DoadorPJ doadorPJ;
-  
-  @ManyToOne
-  private Ong ong;
-  
-  @ManyToOne
-  private Entregador entregador;
+	@Column(name = "")
+	private Boolean status;
+
+	@ManyToOne
+	private DoadorPF doadorPF;
+
+	@ManyToOne
+	private DoadorPJ doadorPJ;
+
+	@ManyToOne
+	private Ong ong;
+
+	@ManyToOne
+	private Entregador entregador;
+
 }

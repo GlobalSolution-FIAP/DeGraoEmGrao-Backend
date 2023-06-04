@@ -1,6 +1,5 @@
 package br.com.deGraoEmGrao.models;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,38 +22,38 @@ import lombok.NoArgsConstructor;
 @Table(name = "")
 public class DoadorPJ {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 
-  @NotBlank
-  @Size(min = 3, max = 50)
-  private String nome;
+	@NotBlank
+	@Size(min = 3, max = 50)
+	private String nome;
 
-  @NotBlank
-  @Size(min = 14, max = 14)
-  private String cnpj;
+	@NotBlank
+	@Size(min = 14, max = 14)
+	private String cnpj;
 
-  @NotBlank
-  @Size(min = 10 , max =11)
-  private String telefone;
+	@NotBlank
+	@Size(min = 10, max = 11)
+	private String telefone;
 
-  @NotBlank
-  @Size(min = 8, max = 50)
-  @Email
-  private String email;
+	@NotBlank
+	@Size(min = 8, max = 50)
+	@Email
+	private String email;
 
-  @NotBlank
-  private String senha;
+	@NotBlank
+	private String senha;
 
-  @NotBlank
-  @Size(min = 3, max = 50)
-  private String responsavel;
+	@NotBlank
+	@Size(min = 3, max = 50)
+	private String responsavel;
 
-  @NotBlank
-  @Size(min = 10 , max =11)
-  private String telResponsavel;
-  
-  @ManyToOne
-  private Endereco endereco;
+	@NotBlank
+	@Size(min = 10, max = 11)
+	private String telResponsavel;
+
+	@ManyToOne
+	private Endereco endereco;
 }

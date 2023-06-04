@@ -19,39 +19,38 @@ import lombok.NoArgsConstructor;
 @Table(name = "")
 public class Endereco {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 
-  @NotBlank
-  @Size(min = 3, max = 80)
-  private String logradouro;
+	@NotBlank
+	@Size(min = 3, max = 80)
+	private String logradouro;
 
-  @NotBlank
-  @Size(min = 1, max = 50)
-  private String numero;
+	@NotBlank
+	@Size(min = 1, max = 50)
+	private String numero;
 
-  private String complemento;
+	private String complemento;
 
-  @NotBlank
-  @Size(min = 2, max = 50)
-  private String bairro;
+	@NotBlank
+	@Size(min = 2, max = 50)
+	private String bairro;
 
-  @NotBlank
-  @Size(min = 8, max = 8)
-  private String cep;
+	@NotBlank
+	@Size(min = 8, max = 8)
+	private String cep;
 
-  @NotBlank
-  @Size(min = 2, max = 50)
-  private String cidade;
+	@NotBlank
+	@Size(min = 2, max = 50)
+	private String cidade;
 
-  @NotBlank
-  @Size(min = 2, max = 5)
-  private String estado;
+	@NotBlank
+	@Size(min = 2, max = 5)
+	private String estado;
 
-  @NotBlank
-  @Size(min = 2, max = 30)
-  private String pais;
-  
-  
+	@NotBlank
+	@Size(min = 2, max = 30)
+	private String pais;
+
 }
