@@ -8,6 +8,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +23,8 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.deGraoEmGrao.exception.RestNotFoundException;
 import br.com.deGraoEmGrao.models.DoadorPF;
 import br.com.deGraoEmGrao.repository.DoadorPFRepository;
+import br.com.deGraoEmGrao.security.Credencial;
+import br.com.deGraoEmGrao.security.TokenService;
 import jakarta.validation.Valid;
 
 @RestController
@@ -31,7 +35,16 @@ public class DoadorPFController {
 
 	@Autowired
 	DoadorPFRepository repository;
-
+	
+	@Autowired
+	AuthenticationManager manager;
+	
+	@Autowired
+	PasswordEncoder encoder;
+	
+	@Autowired
+	TokenService tokenService;
+	
 	@GetMapping
 	public Page<DoadorPF> getAll(@RequestParam(required = false) String nome,
 			@PageableDefault(size = 5) Pageable pageable) {
@@ -41,10 +54,20 @@ public class DoadorPFController {
 
 		return repository.findByNomeContaining(nome, pageable);
 	}
+	
+	@PostMapping("/login")
+	public ResponseEntity<Object> login(@RequestBody @Valid Credencial credencial) {
+		//solicitação de autenticação de email e senha
+		manager.authenticate(credencial.toAuthetication());
+		
+		var token = tokenService.generateToken(credencial);
+		return ResponseEntity.ok(token);
+	}
 
 	@PostMapping
 	public ResponseEntity<DoadorPF> create(@RequestBody @Valid DoadorPF doadorPF) {
 		log.info("Cadastrando doadorPF" + doadorPF);
+		doadorPF.setSenha(encoder.encode(doadorPF.getSenha()));
 		repository.save(doadorPF);
 		return ResponseEntity.status(HttpStatus.CREATED).body(doadorPF);
 	}
