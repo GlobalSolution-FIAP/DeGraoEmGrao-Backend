@@ -2,12 +2,19 @@ package br.com.deGraoEmGrao.models;
 
 import java.util.Calendar;
 
+import org.springframework.hateoas.EntityModel;
+
+import br.com.deGraoEmGrao.controllers.DoacaoController;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,60 +24,67 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+//@NamedQueries({
+//	@NamedQuery(name = "Doacao.porNome", query = "select d from Doacao d where d.nome = :nome"),
+//	@NamedQuery(name = "Doacao.porDoadoPF", query= "select d from Doacao d where d.doadorPF = :doadorPF")
+//})
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Entity
-@Table(name = "")
+@Table(name = "TB_GRAO_DOACAO")
 public class Doacao {
 
-  @Id
-  @Column(name = "")
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer id;
-  
-  @NotBlank
-  @Size(min = 3, max = 50)
-  @Column(name = "")
-  private String nome;
+	@Id
+	@Column(name = "ID_DOACAO")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 
-  @Positive
-  @Column(name = "")
-  private Double quantidade;
+	@NotBlank
+	@Size(min = 3, max = 50)
+	@Column(name = "NM_NOME")
+	private String nome;
 
-  @Temporal(TemporalType.DATE)
-  @Column(name = "")
-  private Calendar dataValidade;
+	@Positive
+	@Column(name = "DS_QUANTIDADE")
+	private Double quantidade;
 
-  @NotBlank
-  @Size(min = 3, max = 50)
-  @Column(name = "")
-  private String Categoria;
+	@Temporal(TemporalType.DATE)
+	@Column(name = "DT_DATA_VALIDADE")
+	private Calendar dataValidade;
 
-  @NotBlank
-  @Size(min = 3, max = 20)
-  @Column(name = "")
-  private String condicao;
+	@Enumerated(EnumType.STRING)
+	@Column(name = "DS_CATEGORIA")
+	private Categoria categoria;
 
-  @Temporal(TemporalType.DATE)
-  @Column(name = "")
-  private Calendar dataEntrega;
+	@NotBlank
+	@Size(min = 3, max = 20)
+	@Column(name = "DS_CONDICAO")
+	private String condicao;
 
-  @Column(name = "")
-  private Boolean status;
+	@Temporal(TemporalType.DATE)
+	@Column(name = "DT_DATA_ENTREGA")
+	private Calendar dataEntrega;
 
-  @ManyToOne
-  private DoadorPF doadorPF;
-  
-  @ManyToOne
-  private DoadorPJ doadorPJ;
-  
-  @ManyToOne
-  private Ong ong;
-  
-  @ManyToOne
-  private Entregador entregador;
+	@Column(name = "DS_STATUS")
+	private Boolean status;
+
+	@ManyToOne
+	private DoadorPF doadorPF;
+
+	@ManyToOne
+	private DoadorPJ doadorPJ;
+
+	@ManyToOne
+	private Ong ong;
+
+	@ManyToOne
+	private Entregador entregador;
+
 }

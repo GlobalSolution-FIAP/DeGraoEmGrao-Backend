@@ -25,47 +25,46 @@ import jakarta.validation.Valid;
 @RequestMapping("/degraoemgrao/endereco")
 public class EnderecoController {
 
-  Logger log = LoggerFactory.getLogger(getClass());
+	Logger log = LoggerFactory.getLogger(getClass());
 
-  @Autowired
-  EnderecoRepository repository;
+	@Autowired
+	EnderecoRepository repository;
 
-  @GetMapping
-  public List<Endereco> getAll(){
-    return repository.findAll();
-  }
+	@GetMapping
+	public List<Endereco> getAll() {
+		return repository.findAll();
+	}
 
-  @PostMapping
-  public ResponseEntity<Endereco> create(@RequestBody @Valid Endereco endereco){
-    log.info("Cadastrando Endereco" + endereco);
-    repository.save(endereco);
-    return ResponseEntity.status(HttpStatus.CREATED).body(endereco);
-  }
+	@PostMapping
+	public ResponseEntity<Endereco> create(@RequestBody @Valid Endereco endereco) {
+		log.info("Cadastrando Endereco" + endereco);
+		repository.save(endereco);
+		return ResponseEntity.status(HttpStatus.CREATED).body(endereco);
+	}
 
-  @GetMapping("{id}")
-  public ResponseEntity<Endereco> show(@PathVariable Integer id){
-    log.info("Buscando um Endereco com o id" + id);
-    return ResponseEntity.ok(getEndereco(id));
-  }
+	@GetMapping("{id}")
+	public ResponseEntity<Endereco> show(@PathVariable Integer id) {
+		log.info("Buscando um Endereco com o id" + id);
+		return ResponseEntity.ok(getEndereco(id));
+	}
 
-  @DeleteMapping("{id}")
-  public ResponseEntity<Endereco> delete(@PathVariable Integer id){
-    log.info("Deletando o Endereco com o id " + id);
-    repository.delete(getEndereco(id));
-    return ResponseEntity.noContent().build();
-  }
+	@DeleteMapping("{id}")
+	public ResponseEntity<Endereco> delete(@PathVariable Integer id) {
+		log.info("Deletando o Endereco com o id " + id);
+		repository.delete(getEndereco(id));
+		return ResponseEntity.noContent().build();
+	}
 
-  @PutMapping("{id}")
-  public ResponseEntity<Endereco> update(@PathVariable Integer id, @RequestBody @Valid Endereco endereco){
-    log.info("Atualizando o Endereco com o id" + id);
-    getEndereco(id);
-    endereco.setId(id);
-    repository.save(endereco);
-    return ResponseEntity.ok(endereco);
-  }
+	@PutMapping("{id}")
+	public ResponseEntity<Endereco> update(@PathVariable Integer id, @RequestBody @Valid Endereco endereco) {
+		log.info("Atualizando o Endereco com o id" + id);
+		getEndereco(id);
+		endereco.setId(id);
+		repository.save(endereco);
+		return ResponseEntity.ok(endereco);
+	}
 
-  private Endereco getEndereco(Integer id){
-    return repository.findById(id)
-    .orElseThrow(() -> new RestNotFoundException("Endereco não cadastrado"));
-  }
+	private Endereco getEndereco(Integer id) {
+		return repository.findById(id).orElseThrow(() -> new RestNotFoundException("Endereco não cadastrado"));
+	}
 }
