@@ -27,37 +27,37 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "")
+@Table(name = "TB_GRAO_DOADOR_PF")
 public class DoadorPF implements UserDetails{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "")
+	@Column(name = "ID_DOADOR_PF")
 	private Integer id;
 
 	@NotBlank
 	@Size(min = 3, max = 50)
-	@Column(name = "")
+	@Column(name = "NM_DOADOR")
 	private String nome;
 
 	@NotBlank
 	@Size(min = 11, max = 11)
-	@Column(name = "")
+	@Column(name = "NR_CPF")
 	private String cpf;
 
 	@NotBlank
 	@Size(min = 10, max = 11)
-	@Column(name = "")
+	@Column(name = "NR_TELEFONE")
 	private String telefone;
 
 	@NotBlank
 	@Size(min = 8, max = 50)
 	@Email
-	@Column(name = "")
+	@Column(name = "DS_EMAIL")
 	private String email;
 
 	@NotBlank
-	@Column(name = "")
+	@Column(name = "DS_SENHA")
 	private String senha;
 
 	@ManyToOne
