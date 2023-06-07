@@ -1,5 +1,7 @@
 package br.com.deGraoEmGrao.controllers;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +54,14 @@ public class DoacaoController {
 	public ResponseEntity<Doacao> show(@PathVariable Integer id) {
 		log.info("Buscando o alimento com o id " + id);
 		return ResponseEntity.ok(getAlimento(id));
+	}
+	
+	@GetMapping("/nome")
+	public List<Doacao> getByNome(@RequestParam("nome") String nome){
+		if (nome == null)
+			getAll(nome, null);
+		
+		return repository.findByNome(nome);
 	}
 
 	@DeleteMapping("{id}")

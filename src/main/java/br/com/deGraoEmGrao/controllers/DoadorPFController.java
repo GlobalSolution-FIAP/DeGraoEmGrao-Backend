@@ -1,7 +1,5 @@
 package br.com.deGraoEmGrao.controllers;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +25,6 @@ import br.com.deGraoEmGrao.models.DoadorPF;
 import br.com.deGraoEmGrao.repository.DoadorPFRepository;
 import br.com.deGraoEmGrao.security.Credencial;
 import br.com.deGraoEmGrao.security.TokenService;
-import jakarta.persistence.EntityManager;
 import jakarta.validation.Valid;
 
 @RestController
