@@ -1484,19 +1484,6 @@
 </details>
 
 
-_________________________________________________________________________________
-_________________________________________________________________________________
-_______________________________________________________________________________________
-_________________________________________________________________________________
-_________________________________________________________________________________
-_________________________________________________________________________________
-_________________________________________________________________________________
-_________________________________________________________________________________
-_________________________________________________________________________________
-_________________________________________________________________________________
-_________________________________________________________________________________
-___________________________________________________________________________
-_________________________________________________________________________________
 <details>
 <summary>Endereço</summary>
 
@@ -1814,11 +1801,11 @@ ________________________________________________________________________________
 <br>
 
 <details>
-<summary> <b style="color:green">POST</b>/deGraoEmGrao/doadorPJ</summary>
+<summary> <b style="color:green">POST</b>/deGraoEmGrao/doacao</summary>
 
 <br/>
 
-### Cadastrar DoadorPJ
+### Cadastrar doacao
 
 <br/>
 
@@ -1826,177 +1813,67 @@ ________________________________________________________________________________
 
 ```json
 {
-	{
+	"id": 3,
+	"nome": "Chocolate",
+	"quantidade": 1.0,
+	"dataValidade": "2023-06-06T03:00:00.000+00:00",
+	"categoria": "DOCES",
+	"condicao": "fresco",
+	"dataEntrega": "2023-06-07T03:00:00.000+00:00",
+	"status": false,
+	"doadorPF": null,
+	"doadorPJ": {
 		"id": 1,
-		"nome": "Restaurante Baiano",
-		"cnpj": "07033410000150",
-		"telefone": "1155781245",
-		"email": "contato@restaurantebaiano.com.br",
-		"senha": "rb9876",
-		"responsavel": "Solange Alves",
-		"telResponsavel": "11995782121",
+		"nome": null,
+		"cnpj": null,
+		"telefone": null,
+		"email": null,
+		"senha": null,
+		"responsavel": null,
+		"telResponsavel": null,
 		"endereco": {
-			"id": 2,
+			"id": 4,
 			"logradouro": null,
-		  "numero": null,
-		  "complemento": null,
-		  "bairro": null,
-		  "cep": null,
-		  "cidade": null,
-		  "estado": null,
-		  "pais": null
-		}
-	}
-}
-```
-
-<br/>
-
-### Responses:
-
-`status code: 200`
-
-#### Body: <b>Application/json</b>
-
-```json
-{
-	"id": 1,
-	"nome": "Restaurante Baiano",
-	"cnpj": "07033410000150",
-	"telefone": "1155781245",
-	"email": "contato@restaurantebaiano.com.br",
-	"senha": "rb9876",
-	"responsavel": "Solange Alves",
-	"telResponsavel": "11995782121",
-	"endereco": {
-		"id": 2,
-		"logradouro": "Rua Domingo de Moraes",
-		"numero": "5241",
-		"complemento": "",
-		"bairro": "Saúde",
-		"cep": "24255-141",
-		"cidade": "São Paulo",
-		"estado": "SP",
-		"pais": "Brasil"
-	}
-}
-
-```
-
-<br/>
-<hr>
-
-`status code: 400`
-
-#### Body: <b>Application/json</b>
-
-```json
-{
-  "retorno": "Mensagem de erro conforme regras de negócios"
-}
-```
-
-<br/>
-</details>
-
-<details>
-<summary> <b style="color:cyan">GET</b>/deGraoEmGrao/doadorPJ</summary>
-
-<br/>
-
-### Listar doadoresPJ
-
-<br/>
-
-### Responses:
-
-`status code: 200`
-
-#### Body: <b>Application/json</b>
-
-```json
-[
-  {
-		"id": 1,
-		"nome": "Restaurante Baiano",
-		"cnpj": "07033410000150",
-		"telefone": "1155781245",
-		"email": "contato@restaurantebaiano.com.br",
-		"senha": "rb9876",
-		"responsavel": "Solange Alves",
-		"telResponsavel": "11995782121",
-		"endereco": {
-			"id": 2,
-			"logradouro": "Rua Domingo de Moraes",
-		  "numero": "5241",
-		  "complemento": "",
-		  "bairro": "Saúde",
-		  "cep": "24255-141",
-		  "cidade": "São Paulo",
-		  "estado": "SP",
-		  "pais": "Brasil"
+			"numero": null,
+			"complemento": null,
+			"bairro": null,
+			"cep": null,
+			"cidade": null,
+			"estado": null,
+			"pais": null
 		}
 	},
-  {
-		"id": 2,
-		"nome": "Hortifrut Frescor",
-		"cnpj": "04125232000185",
-		"telefone": "1141758213",
-		"email": "contato@hortifrutfrescor.com.br",
-		"senha": "hf6958",
-		"responsavel": "Ronaldo Nogueira",
-		"telResponsavel": "11968457236",
-		"endereco": {
-			"id": 3,
-			"logradouro": "Rua do Patriota",
-		  "numero": "698",
-		  "complemento": "",
-		  "bairro": "Portuguesa",
-		  "cep": "047255-003",
-		  "cidade": "Santo André",
-		  "estado": "SP",
-		  "pais": "Brasil"
+		"ong": {
+			"id": 1,
+			"nome": null,
+			"cnpj": null,
+			"telefone": null,
+			"email": null,
+			"senha": null,
+			"responsavel": null,
+			"telResponsavel": null,
+			"endereco": {
+				"id": 6,
+				"logradouro": null,
+				"numero": null,
+				"complemento": "",
+				"bairro": null,
+				"cep": null,
+				"cidade": null,
+				"estado": null,
+				"pais": null
+			}
+		},
+		"entregador": {
+			"id": 1,
+			"nome": null,
+			"cpf": null,
+			"email": null,
+			"senha": null,
+			"telefone": null
 		}
-	}
-]
-
-
-```
-
-<br/>
-<hr>
-
-`status code: 204`
-
-#### Body: <b>Application/json</b>
-
-```json
-{
-  "retorno": "Não há doadoresPJ para retornar"
 }
 ```
-
-<br/>
-<hr>
-
-`status code: 400`
-
-#### Body: <b>Application/json</b>
-
-```json
-{
-  "retorno": "Mensagem de erro conforme regras de negócios"
-}
-```
-
-</details>
-
-<details>
-<summary> <b style="color:cyan">GET</b>/deGraoEmGrao/doadorPJ{id}</summary>
-
-<br/>
-
-### Detalhar um doadorPJ
 
 <br/>
 
@@ -2008,26 +1885,223 @@ ________________________________________________________________________________
 
 ```json
 {
-	"id": 1,
-	"nome": "Restaurante Baiano",
-	"cnpj": "07033410000150",
-	"telefone": "1155781245",
-	"email": "contato@restaurantebaiano.com.br",
-	"senha": "rb9876",
-	"responsavel": "Solange Alves",
-	"telResponsavel": "11995782121",
-	"endereco": {
-		"id": 2,
-		"logradouro": "Rua Domingo de Moraes",
-		"numero": "5241",
-		"complemento": "",
-		"bairro": "Saúde",
-		"cep": "24255-141",
-		"cidade": "São Paulo",
-		"estado": "SP",
-		"pais": "Brasil"
-	}
+	"id": 3,
+	"nome": "Chocolate",
+	"quantidade": 1.0,
+	"dataValidade": "2023-06-06T03:00:00.000+00:00",
+	"categoria": "DOCES",
+	"condicao": "fresco",
+	"dataEntrega": "2023-06-07T03:00:00.000+00:00",
+	"status": false,
+	"doadorPF": null,
+	"doadorPJ": {
+		"id": 1,
+		"nome": "Restaurante Baiano",
+		"cnpj": "07033410000150",
+		"telefone": "1155781245",
+		"email": "contato@restaurantebaiano.com.br",
+		"senha": "rb9876",
+		"responsavel": "Solange Alves",
+		"telResponsavel": "11995782121",
+		"endereco": {
+			"id": 4,
+			"logradouro": "Rod. Raposo",
+			"numero": "s/n",
+			"complemento": "Lote5",
+			"bairro": "Dom Vilares",
+			"cep": "74582222",
+			"cidade": "São Paulo",
+			"estado": "SP",
+			"pais": "Brasil"
+		}
+	},
+		"ong": {
+			"id": 1,
+			"nome": "Refeição do Bem",
+			"cnpj": "09688210000142",
+			"telefone": "1158582020",
+			"email": "contato@refeicaodobem.com.br",
+			"senha": "ob14785",
+			"responsavel": "Ana Cristina",
+			"telResponsavel": "11994715252",
+			"endereco": {
+				"id": 6,
+				"logradouro": "Rua Atibaia",
+				"numero": "471",
+				"complemento": "",
+				"bairro": "São Bento",
+				"cep": "08544220",
+				"cidade": "São Paulo",
+				"estado": "SP",
+				"pais": "Brasil"
+			}
+		},
+		"entregador": {
+			"id": 1,
+			"nome": "Alex Freitas",
+			"cpf": "52415714102",
+			"email": "alexf@ail.com",
+			"senha": "af7458",
+			"telefone": "11995422512"
+		}
 }
+
+```
+
+<br/>
+<hr>
+
+`status code: 400`
+
+#### Body: <b>Application/json</b>
+
+```json
+{
+  "retorno": "Mensagem de erro conforme regras de negócios"
+}
+```
+
+<br/>
+</details>
+
+<details>
+<summary> <b style="color:cyan">GET</b>/deGraoEmGrao/doacao</summary>
+
+<br/>
+
+### Listar doacao
+
+<br/>
+
+### Responses:
+
+`status code: 200`
+
+#### Body: <b>Application/json</b>
+
+```json
+]
+  {
+			"id": 2,
+			"nome": "Peixe",
+			"quantidade": 0.8,
+			"dataValidade": "2023-06-06T03:00:00.000+00:00",
+			"categoria": "CARNES",
+			"condicao": "fresco",
+			"dataEntrega": "2023-06-07T03:00:00.000+00:00",
+			"status": false,
+			"doadorPF": {
+				"id": 1,
+				"nome": "Maria Cardoso",
+				"cpf": "25428753614",
+				"telefone": "11947521358",
+				"email": "maria@email.com",
+				"senha": "m12345",
+				"endereco": {
+					"id": 1,
+					"logradouro": "Av. do Taboão",
+					"numero": "2754",
+					"complemento": "Apto-25",
+					"bairro": "Taboão",
+					"cep": "09655000",
+					"cidade": "São Paulo",
+					"estado": "SP",
+					"pais": "Brasil"
+			},
+			"doadorPJ": null,
+			"ong": {
+				"id": 1,
+				"nome": "Refeição do Bem",
+				"cnpj": "09688210000142",
+				"telefone": "1158582020",
+				"email": "contato@refeicaodobem.com.br",
+				"senha": "ob14785",
+				"responsavel": "Ana Cristina",
+				"telResponsavel": "11994715252",
+				"endereco": {
+					"id": 6,
+					"logradouro": "Rua Atibaia",
+					"numero": "471",
+					"complemento": "",
+					"bairro": "São Bento",
+					"cep": "08544220",
+					"cidade": "São Paulo",
+					"estado": "SP",
+					"pais": "Brasil"
+				}
+			},
+			"entregador": {
+				"id": 1,
+				"nome": "Alex Freitas",
+				"cpf": "52415714102",
+				"email": "alexf@ail.com",
+				"senha": "af7458",
+				"telefone": "11995422512"
+			}
+		},
+		{
+			"id": 3,
+			"nome": "Chocolate",
+			"quantidade": 1.0,
+			"dataValidade": "2023-06-06T03:00:00.000+00:00",
+			"categoria": "DOCES",
+			"condicao": "fresco",
+			"dataEntrega": "2023-06-07T03:00:00.000+00:00",
+			"status": false,
+			"doadorPF": null,
+			"doadorPJ": {
+				"id": 1,
+				"nome": "Restaurante Baiano",
+				"cnpj": "07033410000150",
+				"telefone": "1155781245",
+				"email": "contato@restaurantebaiano.com.br",
+				"senha": "rb9876",
+				"responsavel": "Solange Alves",
+				"telResponsavel": "11995782121",
+				"endereco": {
+					"id": 4,
+					"logradouro": "Rod. Raposo",
+					"numero": "s/n",
+					"complemento": "Lote5",
+					"bairro": "Dom Vilares",
+					"cep": "74582222",
+					"cidade": "São Paulo",
+					"estado": "SP",
+					"pais": "Brasil"
+				}
+			},
+			"ong": {
+				"id": 1,
+				"nome": "Refeição do Bem",
+				"cnpj": "09688210000142",
+				"telefone": "1158582020",
+				"email": "contato@refeicaodobem.com.br",
+				"senha": "ob14785",
+				"responsavel": "Ana Cristina",
+				"telResponsavel": "11994715252",
+				"endereco": {
+					"id": 6,
+					"logradouro": "Rua Atibaia",
+					"numero": "471",
+					"complemento": "",
+					"bairro": "São Bento",
+					"cep": "08544220",
+					"cidade": "São Paulo",
+					"estado": "SP",
+					"pais": "Brasil"
+				}
+			},
+			"entregador": {
+				"id": 1,
+				"nome": "Alex Freitas",
+				"cpf": "52415714102",
+				"email": "alexf@ail.com",
+				"senha": "af7458",
+				"telefone": "11995422512"
+			}
+		}
+]
+
 ```
 
 <br/>
@@ -2039,7 +2113,115 @@ ________________________________________________________________________________
 
 ```json
 {
-  "retorno": "DoadorPJ não cadastrado"
+  "retorno": "Não há doação para retornar"
+}
+```
+
+<br/>
+<hr>
+
+`status code: 400`
+
+#### Body: <b>Application/json</b>
+
+```json
+{
+  "retorno": "Mensagem de erro conforme regras de negócios"
+}
+```
+
+</details>
+
+<details>
+<summary> <b style="color:cyan">GET</b>/deGraoEmGrao/doacao{id}</summary>
+
+<br/>
+
+### Detalhar um doação
+
+<br/>
+
+### Responses:
+
+`status code: 200`
+
+#### Body: <b>Application/json</b>
+
+```json
+{
+	"id": 3,
+	"nome": "Chocolate",
+	"quantidade": 1.0,
+	"dataValidade": "2023-06-06T03:00:00.000+00:00",
+	"categoria": "DOCES",
+	"condicao": "fresco",
+	"dataEntrega": "2023-06-07T03:00:00.000+00:00",
+	"status": false,
+	"doadorPF": null,
+	"doadorPJ": {
+		"id": 1,
+		"nome": "Restaurante Baiano",
+		"cnpj": "07033410000150",
+		"telefone": "1155781245",
+		"email": "contato@restaurantebaiano.com.br",
+		"senha": "rb9876",
+		"responsavel": "Solange Alves",
+		"telResponsavel": "11995782121",
+		"endereco": {
+			"id": 4,
+			"logradouro": "Rod. Raposo",
+			"numero": "s/n",
+			"complemento": "Lote5",
+			"bairro": "Dom Vilares",
+			"cep": "74582222",
+			"cidade": "São Paulo",
+			"estado": "SP",
+			"pais": "Brasil"
+		}
+	},
+		"ong": {
+			"id": 1,
+			"nome": "Refeição do Bem",
+			"cnpj": "09688210000142",
+			"telefone": "1158582020",
+			"email": "contato@refeicaodobem.com.br",
+			"senha": "ob14785",
+			"responsavel": "Ana Cristina",
+			"telResponsavel": "11994715252",
+			"endereco": {
+				"id": 6,
+				"logradouro": "Rua Atibaia",
+				"numero": "471",
+				"complemento": "",
+				"bairro": "São Bento",
+				"cep": "08544220",
+				"cidade": "São Paulo",
+				"estado": "SP",
+				"pais": "Brasil"
+			}
+		},
+		"entregador": {
+			"id": 1,
+			"nome": "Alex Freitas",
+			"cpf": "52415714102",
+			"email": "alexf@ail.com",
+			"senha": "af7458",
+			"telefone": "11995422512"
+		}
+}
+
+```
+
+<br/>
+<hr>
+
+`status code: 204`
+
+#### Body: <b>Application/json</b>
+
+```json
+{
+  "retorno": "Doação não cadastrado"
 }
 ```
 
@@ -2058,37 +2240,399 @@ ________________________________________________________________________________
 </details>
 
 <details>
-<summary> <b style="color:orange">UPDATE</b>/deGraoEmGrao/doadorPJ/{id}</summary>
+<summary> <b style="color:cyan">GET</b>/deGraoEmGrao/doacao/nome</summary>
 
 <br/>
 
-### Atualizar doadorPJ
+### Detalhar uma doação por nome
+
+<br/>
+
+### Responses:
+
+`status code: 200`
+
+#### Body: <b>Application/json</b>
+
+```json
+{
+	"id": 3,
+	"nome": "Chocolate",
+	"quantidade": 1.0,
+	"dataValidade": "2023-06-06T03:00:00.000+00:00",
+	"categoria": "DOCES",
+	"condicao": "fresco",
+	"dataEntrega": "2023-06-07T03:00:00.000+00:00",
+	"status": false,
+	"doadorPF": null,
+	"doadorPJ": {
+		"id": 1,
+		"nome": "Restaurante Baiano",
+		"cnpj": "07033410000150",
+		"telefone": "1155781245",
+		"email": "contato@restaurantebaiano.com.br",
+		"senha": "rb9876",
+		"responsavel": "Solange Alves",
+		"telResponsavel": "11995782121",
+		"endereco": {
+			"id": 4,
+			"logradouro": "Rod. Raposo",
+			"numero": "s/n",
+			"complemento": "Lote5",
+			"bairro": "Dom Vilares",
+			"cep": "74582222",
+			"cidade": "São Paulo",
+			"estado": "SP",
+			"pais": "Brasil"
+		}
+	},
+		"ong": {
+			"id": 1,
+			"nome": "Refeição do Bem",
+			"cnpj": "09688210000142",
+			"telefone": "1158582020",
+			"email": "contato@refeicaodobem.com.br",
+			"senha": "ob14785",
+			"responsavel": "Ana Cristina",
+			"telResponsavel": "11994715252",
+			"endereco": {
+				"id": 6,
+				"logradouro": "Rua Atibaia",
+				"numero": "471",
+				"complemento": "",
+				"bairro": "São Bento",
+				"cep": "08544220",
+				"cidade": "São Paulo",
+				"estado": "SP",
+				"pais": "Brasil"
+			}
+		},
+		"entregador": {
+			"id": 1,
+			"nome": "Alex Freitas",
+			"cpf": "52415714102",
+			"email": "alexf@ail.com",
+			"senha": "af7458",
+			"telefone": "11995422512"
+		}
+}
+
+```
+
+<br/>
+<hr>
+
+`status code: 204`
+
+#### Body: <b>Application/json</b>
+
+```json
+{
+  "retorno": "Doação não cadastrado"
+}
+```
+
+<br/>
+<hr>
+
+`status code: 400`
+
+
+```json
+{
+  "retorno": "Mensagem de erro conforme regras de negócios"
+}
+```
+
+</details>
+
+<details>
+<summary> <b style="color:cyan">GET</b>/deGraoEmGrao/doacao/dataVencimento</summary>
+
+<br/>
+
+### Detalhar uma doação por data de vendimento
+
+<br/>
+
+### Responses:
+
+`status code: 200`
+
+#### Body: <b>Application/json</b>
+
+```json
+{
+	"id": 3,
+	"nome": "Chocolate",
+	"quantidade": 1.0,
+	"dataValidade": "2023-06-06T03:00:00.000+00:00",
+	"categoria": "DOCES",
+	"condicao": "fresco",
+	"dataEntrega": "2023-06-07T03:00:00.000+00:00",
+	"status": false,
+	"doadorPF": null,
+	"doadorPJ": {
+		"id": 1,
+		"nome": "Restaurante Baiano",
+		"cnpj": "07033410000150",
+		"telefone": "1155781245",
+		"email": "contato@restaurantebaiano.com.br",
+		"senha": "rb9876",
+		"responsavel": "Solange Alves",
+		"telResponsavel": "11995782121",
+		"endereco": {
+			"id": 4,
+			"logradouro": "Rod. Raposo",
+			"numero": "s/n",
+			"complemento": "Lote5",
+			"bairro": "Dom Vilares",
+			"cep": "74582222",
+			"cidade": "São Paulo",
+			"estado": "SP",
+			"pais": "Brasil"
+		}
+	},
+		"ong": {
+			"id": 1,
+			"nome": "Refeição do Bem",
+			"cnpj": "09688210000142",
+			"telefone": "1158582020",
+			"email": "contato@refeicaodobem.com.br",
+			"senha": "ob14785",
+			"responsavel": "Ana Cristina",
+			"telResponsavel": "11994715252",
+			"endereco": {
+				"id": 6,
+				"logradouro": "Rua Atibaia",
+				"numero": "471",
+				"complemento": "",
+				"bairro": "São Bento",
+				"cep": "08544220",
+				"cidade": "São Paulo",
+				"estado": "SP",
+				"pais": "Brasil"
+			}
+		},
+		"entregador": {
+			"id": 1,
+			"nome": "Alex Freitas",
+			"cpf": "52415714102",
+			"email": "alexf@ail.com",
+			"senha": "af7458",
+			"telefone": "11995422512"
+		}
+}
+
+```
+
+<br/>
+<hr>
+
+`status code: 204`
+
+#### Body: <b>Application/json</b>
+
+```json
+{
+  "retorno": "Doação não cadastrado"
+}
+```
+
+<br/>
+<hr>
+
+`status code: 400`
+
+
+```json
+{
+  "retorno": "Mensagem de erro conforme regras de negócios"
+}
+```
+
+</details>
+
+<details>
+<summary> <b style="color:cyan">GET</b>/deGraoEmGrao/doacao/categoria</summary>
+
+<br/>
+
+### Detalhar uma doação por categoria
+
+<br/>
+
+### Responses:
+
+`status code: 200`
+
+#### Body: <b>Application/json</b>
+
+```json
+{
+	"id": 3,
+	"nome": "Chocolate",
+	"quantidade": 1.0,
+	"dataValidade": "2023-06-06T03:00:00.000+00:00",
+	"categoria": "DOCES",
+	"condicao": "fresco",
+	"dataEntrega": "2023-06-07T03:00:00.000+00:00",
+	"status": false,
+	"doadorPF": null,
+	"doadorPJ": {
+		"id": 1,
+		"nome": "Restaurante Baiano",
+		"cnpj": "07033410000150",
+		"telefone": "1155781245",
+		"email": "contato@restaurantebaiano.com.br",
+		"senha": "rb9876",
+		"responsavel": "Solange Alves",
+		"telResponsavel": "11995782121",
+		"endereco": {
+			"id": 4,
+			"logradouro": "Rod. Raposo",
+			"numero": "s/n",
+			"complemento": "Lote5",
+			"bairro": "Dom Vilares",
+			"cep": "74582222",
+			"cidade": "São Paulo",
+			"estado": "SP",
+			"pais": "Brasil"
+		}
+	},
+		"ong": {
+			"id": 1,
+			"nome": "Refeição do Bem",
+			"cnpj": "09688210000142",
+			"telefone": "1158582020",
+			"email": "contato@refeicaodobem.com.br",
+			"senha": "ob14785",
+			"responsavel": "Ana Cristina",
+			"telResponsavel": "11994715252",
+			"endereco": {
+				"id": 6,
+				"logradouro": "Rua Atibaia",
+				"numero": "471",
+				"complemento": "",
+				"bairro": "São Bento",
+				"cep": "08544220",
+				"cidade": "São Paulo",
+				"estado": "SP",
+				"pais": "Brasil"
+			}
+		},
+		"entregador": {
+			"id": 1,
+			"nome": "Alex Freitas",
+			"cpf": "52415714102",
+			"email": "alexf@ail.com",
+			"senha": "af7458",
+			"telefone": "11995422512"
+		}
+}
+
+```
+
+<br/>
+<hr>
+
+`status code: 204`
+
+#### Body: <b>Application/json</b>
+
+```json
+{
+  "retorno": "Doação não cadastrada"
+}
+```
+
+<br/>
+<hr>
+
+`status code: 400`
+
+
+```json
+{
+  "retorno": "Mensagem de erro conforme regras de negócios"
+}
+```
+
+</details>
+
+<details>
+<summary> <b style="color:orange">UPDATE</b>/deGraoEmGrao/doacao/{id}</summary>
+
+<br/>
+
+### Atualizar docação
 
 ### Requisição:
 
 
 ```json
 {
-	"id": 1,
-	"nome": "Restaurante Baiano",
-	"cnpj": "07033410000150",
-	"telefone": "1155781245",
-	"email": "contato@restaurantebaiano.com.br",
-	"senha": "rb9876",
-	"responsavel": "Fabio Cristiano",
-	"telResponsavel": "11994751452",
-	"endereco": {
-		"id": 2,
-		"logradouro": "Rua Domingo de Moraes",
-		"numero": "5241",
-		"complemento": "",
-		"bairro": "Saúde",
-		"cep": "24255-141",
-		"cidade": "São Paulo",
-		"estado": "SP",
-		"pais": "Brasil"
-	}
+	"id": 3,
+	"nome": "Chocolate",
+	"quantidade": 3.0,
+	"dataValidade": "2023-06-06T03:00:00.000+00:00",
+	"categoria": "DOCES",
+	"condicao": "fresco",
+	"dataEntrega": "2023-06-07T03:00:00.000+00:00",
+	"status": true,
+	"doadorPF": null,
+	"doadorPJ": {
+		"id": 1,
+		"nome": "Restaurante Baiano",
+		"cnpj": "07033410000150",
+		"telefone": "1155781245",
+		"email": "contato@restaurantebaiano.com.br",
+		"senha": "rb9876",
+		"responsavel": "Solange Alves",
+		"telResponsavel": "11995782121",
+		"endereco": {
+			"id": 4,
+			"logradouro": "Rod. Raposo",
+			"numero": "s/n",
+			"complemento": "Lote5",
+			"bairro": "Dom Vilares",
+			"cep": "74582222",
+			"cidade": "São Paulo",
+			"estado": "SP",
+			"pais": "Brasil"
+		}
+	},
+		"ong": {
+			"id": 1,
+			"nome": "Refeição do Bem",
+			"cnpj": "09688210000142",
+			"telefone": "1158582020",
+			"email": "contato@refeicaodobem.com.br",
+			"senha": "ob14785",
+			"responsavel": "Ana Cristina",
+			"telResponsavel": "11994715252",
+			"endereco": {
+				"id": 6,
+				"logradouro": "Rua Atibaia",
+				"numero": "471",
+				"complemento": "",
+				"bairro": "São Bento",
+				"cep": "08544220",
+				"cidade": "São Paulo",
+				"estado": "SP",
+				"pais": "Brasil"
+			}
+		},
+		"entregador": {
+			"id": 1,
+			"nome": "Alex Freitas",
+			"cpf": "52415714102",
+			"email": "alexf@ail.com",
+			"senha": "af7458",
+			"telefone": "11995422512"
+		}
 }
+
 ```
 <br/>
 
@@ -2102,26 +2646,67 @@ ________________________________________________________________________________
 
 ```json
 {
-	"id": 1,
-	"nome": "Restaurante Baiano",
-	"cnpj": "07033410000150",
-	"telefone": "1155781245",
-	"email": "contato@restaurantebaiano.com.br",
-	"senha": "rb9876",
-	"responsavel": "Fabio Cristiano",
-	"telResponsavel": "11994751452",
-	"endereco": {
-		"id": 2,
-		"logradouro": "Rua Domingo de Moraes",
-		"numero": "5241",
-		"complemento": "",
-		"bairro": "Saúde",
-		"cep": "24255-141",
-		"cidade": "São Paulo",
-		"estado": "SP",
-		"pais": "Brasil"
-	}
+	"id": 3,
+	"nome": "Chocolate",
+	"quantidade": 3.0,
+	"dataValidade": "2023-06-06T03:00:00.000+00:00",
+	"categoria": "DOCES",
+	"condicao": "fresco",
+	"dataEntrega": "2023-06-07T03:00:00.000+00:00",
+	"status": true,
+	"doadorPF": null,
+	"doadorPJ": {
+		"id": 1,
+		"nome": "Restaurante Baiano",
+		"cnpj": "07033410000150",
+		"telefone": "1155781245",
+		"email": "contato@restaurantebaiano.com.br",
+		"senha": "rb9876",
+		"responsavel": "Solange Alves",
+		"telResponsavel": "11995782121",
+		"endereco": {
+			"id": 4,
+			"logradouro": "Rod. Raposo",
+			"numero": "s/n",
+			"complemento": "Lote5",
+			"bairro": "Dom Vilares",
+			"cep": "74582222",
+			"cidade": "São Paulo",
+			"estado": "SP",
+			"pais": "Brasil"
+		}
+	},
+		"ong": {
+			"id": 1,
+			"nome": "Refeição do Bem",
+			"cnpj": "09688210000142",
+			"telefone": "1158582020",
+			"email": "contato@refeicaodobem.com.br",
+			"senha": "ob14785",
+			"responsavel": "Ana Cristina",
+			"telResponsavel": "11994715252",
+			"endereco": {
+				"id": 6,
+				"logradouro": "Rua Atibaia",
+				"numero": "471",
+				"complemento": "",
+				"bairro": "São Bento",
+				"cep": "08544220",
+				"cidade": "São Paulo",
+				"estado": "SP",
+				"pais": "Brasil"
+			}
+		},
+		"entregador": {
+			"id": 1,
+			"nome": "Alex Freitas",
+			"cpf": "52415714102",
+			"email": "alexf@ail.com",
+			"senha": "af7458",
+			"telefone": "11995422512"
+		}
 }
+
 ```
 <br/>
 <hr>
@@ -2140,7 +2725,7 @@ ________________________________________________________________________________
 </details>
 
 <details>
-<summary> <b style="color:red">DELETE</b>/deGraoEmGrao/doadorPJ/{id}</summary>
+<summary> <b style="color:red">DELETE</b>/deGraoEmGrao/doacao/{id}</summary>
 
 <br/>
 
@@ -2156,7 +2741,7 @@ ________________________________________________________________________________
 
 ```json
 {
-  "retorno": "DoadorPJ apagado com sucesso"
+  "retorno": "Docação apagado com sucesso"
 }
 ```
 
@@ -2169,7 +2754,7 @@ ________________________________________________________________________________
 
 ```json
 {
-  "retorno": "DoadorPJ não cadastrado"
+  "retorno": "Docação não cadastrado"
 }
 ```
 
@@ -2181,15 +2766,15 @@ ________________________________________________________________________________
 
 |       campo       |     tipo    | obrigatório |descrição                  |
 | :---------------: | :---------: | :---------: | ------------------------|
-|        id         |    numeric(10)     |     sim     | Id do doadorPJ              |
-|       nome        |    varchar(50)     |     sim     | Nome do doadorPJ                 |
-|       cnpj        |    varchar(14)     |     sim     | CNPJ do doadorPJ               |
-|       email       |    varchar(14)     |     sim     | Email do doadorPJ   |
-|       senha       |    varchar(30)     |     sim     | Senha do doadorPJ |
-|  telefone  | varchar(11) |     sim     | Telefone do doadorPJ        |
-|  responsavel  | varchar(50) |     sim     | Responsavel da doação       |
-|  telefone  | varchar(11) |     sim     | Telefone do doadorPJ        |
-|       endereco       | fk_id_endereco  |     sim     | Endereço do doadorPF   |
+|        id         |    numeric(10)     |     sim     | Id da docação             |
+|       nome        |    varchar(50)     |     sim     | Nome do produto doado                 |
+|       quantidade        |    double(4, 3)     |     sim     | Quantidade do produto doado     |
+|       dataValidade        |    Date     |     sim     | Data da validade do produto              |
+|       categoria       |    varchar(50)     |     sim     | Categoria do produto |
+|       condicao       |    varchar(20)     |     sim     | Informa se o produto é fresco ou congelado|
+|  dataValidade  | Date |     sim     | Data da entrega do produto       |
+|  status  | boolean |     sim     | Caso doação ter sido entregue, seta para true, se não, false     |
+
 
 
 </details>
