@@ -1,5 +1,6 @@
 package br.com.deGraoEmGrao.controllers;
 
+import java.util.Calendar;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.deGraoEmGrao.exception.RestNotFoundException;
+import br.com.deGraoEmGrao.models.Categoria;
 import br.com.deGraoEmGrao.models.Doacao;
 import br.com.deGraoEmGrao.repository.DoacaoRepository;
 
@@ -63,6 +65,18 @@ public class DoacaoController {
 		
 		return repository.findByNome(nome);
 	}
+	
+	@GetMapping("/categoria")
+	public List<Doacao> getByCategoria(@RequestParam("categoria") Categoria categoria){
+	
+		return repository.findByCategoria(categoria);
+	}
+	
+	@GetMapping("/status")
+	public List<Doacao> getByStatus(@RequestParam("status") Boolean status){
+		return repository.findByStatus(status);
+	}
+
 
 	@DeleteMapping("{id}")
 	public ResponseEntity<Doacao> delete(@PathVariable Integer id) {
