@@ -21,11 +21,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//@NamedQueries({
-//	@NamedQuery(name = "Doacao.porNome", query = "select d from Doacao d where d.nome = :nome"),
-//	@NamedQuery(name = "Doacao.porDoadoPF", query= "select d from Doacao d where d.doadorPF = :doadorPF")
-//})
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
